@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar color="dark" >
+    <ion-title color="primary">
+      <strong class="ion-text-uppercase">
+        {{appName}}
+      </strong>
+    </ion-title>
+    <ion-buttons *ngIf="(movies$ | async)" slot="primary">
+        <ion-button  *ngIf="(movies$ | async).length !== 0" (click)="goToMovies()" >
+          <ion-badge color="primary">{{(movies$ | async).length}}  {{(movies$ | async).length < 2 ? 'Movie' : 'Movies' }}</ion-badge>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>

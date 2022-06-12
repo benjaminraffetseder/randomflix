@@ -1,20 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<app-topbar></app-topbar>
+<ion-content>
+  <div class="content">
+    <ion-card>
+      <ion-card-content>
+        <form [formGroup]="movieForm">
+          <ion-item lines="none">
+            <ion-label position="stacked">Movie name</ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="stacked">Genre</ion-label>
+            <ion-input type="text" formControlName="genre"></ion-input>
+          </ion-item>
+          <ion-button [disabled]="movieForm.invalid" expand="block" (click)="addMovie()">
+            Add movie
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

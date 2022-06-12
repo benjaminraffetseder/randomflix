@@ -1,3 +1,21 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
+  <ion-tabs #tabs (ionTabsDidChange)="setCurrentTab()">
+    <ion-tab-bar color="dark" slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon [color]="selectedTab === 'home' ? 'primary' : 'light'" [name]="selectedTab === 'home' ? 'add-circle' : 'add-circle-outline'"></ion-icon>
+        <ion-label>Add Movies</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="select-movie">
+        <ion-icon [color]="selectedTab === 'select-movie' ? 'primary' : 'light'"  [name]="selectedTab === 'select-movie' ? 'play' : 'play-outline'"></ion-icon>
+        <ion-label>Select Movie</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="movies">
+        <ion-icon [color]="selectedTab === 'movies' ? 'primary' : 'light'" [name]="selectedTab === 'movies' ? 'film' : 'film-outline'"></ion-icon>
+        <ion-label>Movies</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-app>

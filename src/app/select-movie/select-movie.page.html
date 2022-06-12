@@ -1,0 +1,20 @@
+<app-topbar></app-topbar>
+
+<ion-content>
+  <div class="movie-container">
+      <ion-badge *ngIf="movie">
+        {{movie.genre}}
+      </ion-badge>
+
+      <h1 *ngIf="movie">
+        <strong>
+          <span>{{movie.name}}</span>
+          <span>{{movie.name}}</span>
+          <span>{{movie.name}}</span>
+          <span>{{movie.name}}</span>
+          <span>{{movie.name}}</span>
+        </strong>
+      </h1>
+    <ion-button (click)="getRandomMovie()" >Get a random movie</ion-button>
+  </div>
+</ion-content>

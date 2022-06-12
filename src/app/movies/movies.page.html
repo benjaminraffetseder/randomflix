@@ -1,0 +1,20 @@
+<app-topbar></app-topbar>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header color="dark">Movies</ion-list-header>
+    <ion-item-sliding *ngFor="let movie of movies$ | async">
+      <ion-item-options side="end">
+      <ion-item-option color="danger" expandable (click)="deleteMovie(movie)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+      <ion-item>
+        <ion-label>{{movie.name}}</ion-label>
+        <ion-note slot="end">
+          <ion-badge>{{movie.genre}}</ion-badge>
+        </ion-note>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
