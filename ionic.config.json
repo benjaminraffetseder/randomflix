@@ -1,0 +1,7 @@
+{
+  "name": "randoflix",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
